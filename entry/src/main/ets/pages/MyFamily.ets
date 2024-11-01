@@ -1,0 +1,49 @@
+@Entry
+@Component
+struct MyFamily {
+  @State message: string = 'hi'
+  @State array:Array<teacherEntity>=[
+    {name1:"张三",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"李四",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
+    ,
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
+    ,
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
+    ,
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
+    ,
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
+    ,
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
+    ,
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
+    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
+
+ 
+  ]
+
+  build() {
+ 
+  }
+}
+export class teacherEntity{
+  constructor(public name1:string,public name2:string,public  msg1:string,public  msg2:string) {
+    this.name1 = name1
+    this.name2 = name2
+    this.msg1 = msg1
+    this.msg2 = msg2
+  }
+}
