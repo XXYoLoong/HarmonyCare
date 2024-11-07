@@ -31,12 +31,11 @@ struct Index {
 
   aboutToAppear() {
     //延迟五秒钟 做一个操作
-    setTimeout(function () {
+    setTimeout(() => {
       //操作的内容->跳转
       router.pushUrl({
         url: "pages/page"
-      })
-
+      });
     }, 5000)
   }
   //跳转时候动画

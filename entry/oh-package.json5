@@ -3,7 +3,7 @@
   "devDependencies": {},
   "name": "entry",
   "description": "example description",
-  "repository": {},
-  "version": "1.0.0",
-  "dependencies": {}
+  "version": "1.0.1",
+  "dependencies": {},
+  "modelVersion": "5.0.0",
 }

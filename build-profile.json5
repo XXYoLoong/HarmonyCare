@@ -1,26 +1,28 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\Raina\\.ohos\\config\\auto_debug_HarmonyCare_com.hjj.myapplication_2850086000397551826.cer",
-          "storePassword": "0000001B468B7A4FF6FD7DCC860A0CA02F081A7CC093B238AB797E351757A76963E734854B73693EE8BC2B",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B344706E064EDFD895F67FA224D35296CD26423B1546C63BF56C4096EC358E4EC23CAE9ABD1AE60",
-          "profile": "C:\\Users\\Raina\\.ohos\\config\\auto_debug_HarmonyCare_com.hjj.myapplication_2850086000397551826.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\Raina\\.ohos\\config\\auto_debug_HarmonyCare_com.hjj.myapplication_2850086000397551826.p12"
-        }
-      }
+//      {
+//        "name": "default",
+//        "type": "HarmonyOS",
+//        "material": {
+//          "certpath": "C:\\Users\\Raina\\.ohos\\config\\auto_debug_HarmonyCare_com.hjj.myapplication_2850086000397551826.cer",
+//          "storePassword": "0000001B468B7A4FF6FD7DCC860A0CA02F081A7CC093B238AB797E351757A76963E734854B73693EE8BC2B",
+//          "keyAlias": "debugKey",
+//          "keyPassword": "0000001B344706E064EDFD895F67FA224D35296CD26423B1546C63BF56C4096EC358E4EC23CAE9ABD1AE60",
+//          "profile": "C:\\Users\\Raina\\.ohos\\config\\auto_debug_HarmonyCare_com.hjj.myapplication_2850086000397551826.p7b",
+//          "signAlg": "SHA256withECDSA",
+//          "storeFile": "C:\\Users\\Raina\\.ohos\\config\\auto_debug_HarmonyCare_com.hjj.myapplication_2850086000397551826.p12"
+//        }
+//      }
     ],
-    "compileSdkVersion": 9,
-    "compatibleSdkVersion": 9,
+
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
+        "compatibleSdkVersion": "4.0.0(10)",      //指定HarmonyOS应用/服务兼容的最低版本。
+        "targetSdkVersion": "5.0.0(12)",          //指定HarmonyOS应用/服务目标版本。若没有设置，默认为compatibleSdkVersion
+        "runtimeOS": "HarmonyOS",                 //指定为HarmonyOS
       }
     ]
   },
