@@ -2,48 +2,56 @@
 @Component
 struct MyFamily {
   @State message: string = 'hi'
-  @State array:Array<teacherEntity>=[
-    {name1:"张三",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"李四",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
-    ,
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
-    ,
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
-    ,
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
-    ,
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
-    ,
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
-    ,
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"王五",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"},
-    {name1:"赵六",msg1:"这个老师非常的",name2:"张三",msg2:"这个老师非常的"}
-
- 
-  ]
+  @State array: Array<teacherEntity> = [
+    new teacherEntity("张三", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("李四", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("张三", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("李四", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("张三", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("李四", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("张三", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("李四", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("王五", "张三", "这个老师非常的", "这个老师非常的"),
+    new teacherEntity("赵六", "张三", "这个老师非常的", "这个老师非常的"),
+  // 其他条目...
+  ];
 
   build() {
  
   }
 }
 export class teacherEntity{
-  constructor(public name1:string,public name2:string,public  msg1:string,public  msg2:string) {
-    this.name1 = name1
-    this.name2 = name2
-    this.msg1 = msg1
-    this.msg2 = msg2
-  }
+  public name1: string;
+  public name2: string;
+  public msg1: string;
+  public msg2: string;
+
+  constructor(name1: string, name2: string, msg1: string, msg2: string) {
+  this.name1 = name1;
+  this.name2 = name2;
+  this.msg1 = msg1;
+  this.msg2 = msg2;
+  this.name1 = name1;
+  this.name2 = name2;
+  this.msg1 = msg1;
+  this.msg2 = msg2;
+}
 }

@@ -50,21 +50,29 @@ export default struct CustomDialogWidget {
    *
    * @param {HobbyBean[]} hobby bean array
    */
+
+
   setHobbiesValue(hobbyBeans: HobbyBean[]) {
+
     if (CommonUtils.isEmptyArr(hobbyBeans)) {
       Logger.error(CommonConstants.TAG_HOME, 'hobbyBeans length is 0');
       return;
     }
-    let hobbiesText: string = '';
-    hobbiesText = hobbyBeans.filter((isCheckItem: HobbyBean) => isCheckItem?.isChecked)
-      .map((checkedItem: HobbyBean) => {
-        return checkedItem.label;
-      })
-      .join(CommonConstants.COMMA);
+
+    // 提取 isChecked 为 true 的 hobbyBean.label 生成字符串数组
+    const checkedLabels: string[] = hobbyBeans
+      .filter((isCheckItem: HobbyBean) => isCheckItem.isChecked) // 过滤已选中的项目
+      .map((checkedItem: HobbyBean) => checkedItem.label); // 提取 label 属性
+
+    // 将选中的 label 用逗号拼接成字符串
+    const hobbiesText: string = checkedLabels.join(CommonConstants.COMMA);
+
+    // 如果 hobbiesText 有内容，将其赋值给 this.hobbies
     if (hobbiesText.length > 0) {
       this.hobbies = hobbiesText;
     }
   }
+
 
   build() {
     Column() {
@@ -87,7 +95,7 @@ export default struct CustomDialogWidget {
                 .fontWeight(CommonConstants.BIGGER)
                 .margin({ left: $r('app.float.label_left_distance') })
               Toggle({ type: ToggleType.Checkbox, isOn: false })
-                .onChange((isCheck) => {
+                .onChange((isCheck: boolean) => { // 显式声明 isCheck 的类型
                   itemHobby.isChecked = isCheck;
                 })
                 .width($r('app.float.toggle_size'))
@@ -100,7 +108,7 @@ export default struct CustomDialogWidget {
               bottom: $r('app.float.options_bottom_distance')
             })
           }
-        }, itemHobby => itemHobby.label)
+        }, (itemHobby: HobbyBean) => itemHobby.label) // 显式声明 itemHobby 的类型
       }
       .margin({
         top: $r('app.float.list_top_distance'),

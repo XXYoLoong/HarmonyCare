@@ -102,7 +102,7 @@ export struct OlderPage {
       TextCommonWidget({
         textImage: $r('app.media.ic_birthdate'),
         title: $r('app.string.title_birthdate'),
-        content: $birthdate,
+        content: this.birthdate,
         onItemClick: () => {
           CommonUtils.datePickerDialog((birthValue: string) => {
             this.birthdate = birthValue;
@@ -112,7 +112,7 @@ export struct OlderPage {
       TextCommonWidget({
         textImage: $r('app.media.ic_sex'),
         title: $r('app.string.title_sex'),
-        content: $sex,
+        content: this.sex,
         onItemClick: () => {
           CommonUtils.textPickerDialog(this.sexArray, (sexValue: string) => {
             this.sex = sexValue;
@@ -126,7 +126,7 @@ export struct OlderPage {
       TextCommonWidget({
         textImage: $r('app.media.ic_hobbies'),
         title: $r('app.string.title_hobbies'),
-        content: $hobbies,
+        content: this.hobbies,
         onItemClick: () => {
           this.customDialogController.open();
         }

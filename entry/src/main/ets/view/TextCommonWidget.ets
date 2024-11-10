@@ -12,15 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import CommonConstants from '../common/constants/CommonConstants';
+import CommonConstants from "../common/constants/CommonConstants";
 
 @Component
 export default struct TextCommonWidget {
-  @Link content: string;
-  private textImage: Resource;
-  private title: Resource;
-  onItemClick: () => void;
+  @Prop textImage: Resource; // 使用 @Prop 让父组件传递不同的资源
+  @Prop title: Resource;
+  @Prop content: string;
+  @Prop onItemClick: () => void;
+
 
   build() {
     Row() {

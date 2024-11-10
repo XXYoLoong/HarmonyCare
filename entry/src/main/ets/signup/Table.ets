@@ -1,32 +1,44 @@
+// Table.ts
 import { Account } from './Account';
 
-export class Table {
-  data: Account[] = [];
+// 添加泛型约束，确保 T 类型具有 id 属性
+interface GeneratedTypeLiteralInterface_1 {
+  id: number;
+}
 
-  select(id: number): Account {
-    return this.data.find(d => d.id === id);
+export class Table<T extends GeneratedTypeLiteralInterface_1> {
+  data: T[] = [];
+
+  select(id: number): T | undefined {
+    return this.data.find(item => item.id === id);
   }
 
-  insert(account: Account): boolean {
-    this.data.push(account);
+  insert(item: T): boolean {
+    if (this.data.some(existingItem => existingItem.id === item.id)) {
+      console.warn(`Item with id ${item.id} already exists.`);
+      return false;
+    }
+    this.data.push(item);
     return true;
   }
 
-  update(account: Account): boolean {
-    let index = this.data.findIndex(d => d.id === account.id);
+  update(item: T): boolean {
+    const index = this.data.findIndex(existingItem => existingItem.id === item.id);
     if (index !== -1) {
-      this.data[index] = account;
+      this.data[index] = item;
       return true;
     }
+    console.warn(`Item with id ${item.id} not found for update.`);
     return false;
   }
 
   delete(id: number): boolean {
-    let index = this.data.findIndex(d => d.id === id);
+    const index = this.data.findIndex(existingItem => existingItem.id === id);
     if (index !== -1) {
       this.data.splice(index, 1);
       return true;
     }
+    console.warn(`Item with id ${id} not found for deletion.`);
     return false;
   }
 }

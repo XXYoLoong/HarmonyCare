@@ -1,6 +1,9 @@
 import router from '@ohos.router';
 import prompt from '@ohos.prompt';
 import { db } from '../signup/Database';
+import { Account } from '../signup/Account';
+import { Table } from '../signup/Table';
+
 @Entry
 @Component
 struct Home {
@@ -95,16 +98,29 @@ struct Home {
     .height("100%")
 
   }
-  signUp_account(){
+  signUp_account() {
+    const accountTable: Table<Account> | undefined = db.tables.get("Account");
 
-    // 添加账号
-    db.tables.get("Account").insert({id: 1, username: this.username, password: this.password});
-    prompt.showToast({message:'注册成功'})
+    if (accountTable !== undefined) {
+      // 创建并插入一个新的 Account 实例
+      const newAccount = new Account(1, this.username, this.password);
+      accountTable.insert(newAccount);
+      prompt.showToast({ message: '注册成功' });
 
-    // 查询账号
-    let account = db.tables.get("Account").select(1);
-    console.log(account.username + account.password);
-
+      // 查询账号
+      const account = accountTable.select(1);
+      if (account) { // 检查 account 是否存在
+        console.log(account.username + account.password);
+      } else {
+        console.warn("Account with ID 1 does not exist.");
+        prompt.showToast({ message: '查询失败：账号不存在' });
+      }
+    } else {
+      console.error("Account table does not exist.");
+      prompt.showToast({ message: '系统错误，请稍后再试' });
+    }
   }
+
+
 
 }

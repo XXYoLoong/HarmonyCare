@@ -17,8 +17,8 @@ import CommonConstants from '../common/constants/CommonConstants';
 
 @Component
 export default struct TextInputWidget {
-  private inputImage: Resource;
-  private hintText: Resource;
+  @Prop private inputImage: Resource;
+  @Prop private hintText: Resource;
 
   build() {
     Row() {

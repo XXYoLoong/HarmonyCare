@@ -2,7 +2,7 @@ import router from '@ohos.router'
 
 @Entry
 @Component
-struct Wisecare {
+struct HarmonyCare {
   @State message: string = 'Hello World'
 
 
