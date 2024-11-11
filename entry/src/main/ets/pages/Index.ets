@@ -2,7 +2,8 @@ import router from '@ohos.router';
 @Entry
 @Component
 struct Index {
-  @State message: string = 'HarmonyCare智慧康养系统'
+  @State message1: string = 'HarmonyCare'
+  @State message2: string = '智慧康养系统'
 
   build() {
     Column() {
@@ -16,12 +17,19 @@ struct Index {
       .height("100%")
       .offset({ x: "0px", y: "0px" })
       .alignItems(HorizontalAlign.End)
-      Text(`${this.message}`)
+      Text(`${this.message1}`)
         .width("300vp")
         .height("60vp")
         .offset({ x: "-90px", y: "-2046.91px" })
         .textAlign(TextAlign.Center)
-        .fontSize("50fp")
+        .fontSize("40fp")
+        .fontWeight(FontWeight.Bold)
+      Text(`${this.message2}`)
+        .width("300vp")
+        .height("60vp")
+        .offset({ x: "-90px", y: "-2090.91px" })
+        .textAlign(TextAlign.Center)
+        .fontSize("30fp")
         .fontWeight(FontWeight.Bold)
     }    
     .width("100%")
