@@ -2,6 +2,7 @@ import router from '@ohos.router';
 @Entry
 @Component
 struct Index {
+
   @State message1: string = 'HarmonyCare'
   @State message2: string = '智慧康养系统'
 
