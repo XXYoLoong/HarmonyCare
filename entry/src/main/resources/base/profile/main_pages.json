@@ -1,0 +1,16 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/login",
+    "pages/MyFamily",
+    "pages/wisecare",
+    "pages/register",
+    "pages/OlderPage",
+    "pages/page",
+    "pages/CommonInfo",
+    "pages/OldIndex",
+    "pages/shfw",
+    "pages/yygh",
+    "pages/view"
+  ]
+}

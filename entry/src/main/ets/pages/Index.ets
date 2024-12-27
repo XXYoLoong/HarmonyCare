@@ -1,0 +1,57 @@
+import router from '@ohos.router';
+@Entry
+@Component
+struct Index {
+
+  @State message1: string = 'HarmonyCare'
+  @State message2: string = '智慧康养系统'
+
+  build() {
+    Column() {
+      Column() {
+        Image($r('app.media.img'))
+          .width("100%")
+          .height("100%")
+          .offset({ x: "0", y: "0px" })
+      }
+      .width("100%")
+      .height("100%")
+      .offset({ x: "0px", y: "0px" })
+      .alignItems(HorizontalAlign.End)
+      Text(`${this.message1}`)
+        .width("300vp")
+        .height("60vp")
+        .offset({ x: "-90px", y: "-2046.91px" })
+        .textAlign(TextAlign.Center)
+        .fontSize("40fp")
+        .fontWeight(FontWeight.Bold)
+      Text(`${this.message2}`)
+        .width("300vp")
+        .height("60vp")
+        .offset({ x: "-90px", y: "-2090.91px" })
+        .textAlign(TextAlign.Center)
+        .fontSize("30fp")
+        .fontWeight(FontWeight.Bold)
+    }
+    .width("100%")
+    .height("100%")
+    .alignItems(HorizontalAlign.End)
+  }
+
+  aboutToAppear() {
+    //延迟五秒钟 做一个操作
+    setTimeout(() => {
+      //操作的内容->跳转
+      router.pushUrl({
+        url: "pages/page"
+      });
+    }, 5000)
+  }
+  //跳转时候动画
+  pageTransition() {
+    //入场动画
+    PageTransitionEnter({ duration: 2000, curve: Curve.Friction }).slide(SlideEffect.Left)
+    //出场动画
+    PageTransitionExit({ duration: 2000, curve: Curve.Smooth }).slide(SlideEffect.Bottom)
+  }
+}
