@@ -1,6 +1,20 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "storePassword": "00000019DE0A44A465D6614EC8575B56D07A605C89BEF95958648CB2F94D983015A3B0A5F2B0BD3C70",
+          "certpath": "D:/DevEcoSet/key/Yoloong.cer",
+          "keyAlias": "yoloong_key",
+          "keyPassword": "00000019E315794122F7E5CAE219370A39485222C42101E6E4FBEB976F00054F23A8A24C04E0CD2C8B",
+          "profile": "E:/OneDrive/Desktop/project/HarmonyCare202410/release/HarmonyCareRelease.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "D:/DevEcoSet/key/yoloong_key.p12"
+        }
+      }
+    ],
     "products": [
       {
         "name": "default",
