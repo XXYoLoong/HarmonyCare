@@ -5,11 +5,11 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "storePassword": "00000019DE0A44A465D6614EC8575B56D07A605C89BEF95958648CB2F94D983015A3B0A5F2B0BD3C70",
-          "certpath": "D:/DevEcoSet/key/Yoloong.cer",
+          "storePassword": "0000001928496E9F7E205BE0F45387C555E2A255CEF85BF026D0B8E0D59C85AFBF5F0C38D1ABFB209E",
+          "certpath": "D:/DevEcoSet/key/yolong_key.cer",
           "keyAlias": "yoloong_key",
-          "keyPassword": "00000019E315794122F7E5CAE219370A39485222C42101E6E4FBEB976F00054F23A8A24C04E0CD2C8B",
-          "profile": "E:/OneDrive/Desktop/project/HarmonyCare202410/release/HarmonyCareRelease.p7b",
+          "keyPassword": "000000194472E199AC04146D142799FCCDB75896ADC91D84F361379AFA7AD4D9368AA4D532313FF137",
+          "profile": "D:/DevEcoSet/key/Profile/yolong_HarmonyCareRelease.p7b",
           "signAlg": "SHA256withECDSA",
           "storeFile": "D:/DevEcoSet/key/yoloong_key.p12"
         }
